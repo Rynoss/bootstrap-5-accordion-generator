@@ -18,7 +18,7 @@ $(document).ready(function() {
 	}
 	
 	function createNewItem(order) {
-		var newItem = '<div class="accordion-item">' + 
+		var newItem = '<div class="accordion-single">' + 
 			'<a href="#"><i class="glyphicon glyphicon-trash delete-item"></i></a>' + 
 			'<div class="form-group">' + 
 			'<label>Item ' + order + ' Title</label>' + 
@@ -34,16 +34,16 @@ $(document).ready(function() {
 	}
 	
 	function createNewPanel(accordionId,panelId,title,description) {
-		var newPanel = '\n\t<div class="card">\n\t\t'+
-			'<div class="card-header" id="heading-' + panelId + '">\n\t\t\t'+
+		var newPanel = '\n\t<div class="accordion-item">\n\t\t'+
+			'<div class="accordion-header" id="heading-' + panelId + '">\n\t\t\t'+
 				'<h2 class="mb-0">\n\t\t\t\t'+
-					'<button class="btn btn-link collapsed" data-toggle="collapse" data-parent="#accordion-' + accordionId + '" href="#collapse-' + panelId + '" aria-expanded="true" aria-controls="collapse' + panelId + '">\n\t\t\t\t\t' + 
+					'<button class="accordion-button collapsed"  type="button" data-bs-toggle="collapse" data-bs-target="#accordion-' + accordionId + '" aria-expanded="true" aria-controls="collapse' + panelId + '">\n\t\t\t\t\t' + 
 						title + 
 					'</button>\n\t\t\t' + 
 				'</h2>\n\t\t' + 
 			'</div>\n\t\t' + 
-			'<div id="collapse-' + panelId + '" class="collapse" aria-labelledby="heading-' + panelId + '" data-parent="#accordion-' + accordionId + '">\n\t\t\t' + 
-				'<div class="card-body">\n\t\t\t\t' + 
+			'<div id="collapse-' + panelId + '" class="accordion-collapse collapse" aria-labelledby="heading-' + panelId + '" data-bs-parent="#accordion-' + accordionId + '">\n\t\t\t' + 
+				'<div class="accordion-body">\n\t\t\t\t' + 
 					description + '\n\t\t\t' + 
 				'</div>\n\t\t' + 
 			'</div>\n\t' + 
@@ -54,16 +54,16 @@ $(document).ready(function() {
 	
 	$(".btn-add-new").click(function(e) {
 		e.preventDefault();
-		var order = $(".accordion-item").length + 1,
+		var order = $(".accordion-single").length + 1,
 			startingId = parseInt($(".starting-id").text());
 		
 		createNewItem(order);
 	});
 	
 	$(".accordion-item-wrapper").on("click",".delete-item",function() {
-		if ($(".accordion-item").length > 1) {
+		if ($(".accordion-single").length > 1) {
 			if (confirm("Are you sure you want to delete this accordion item?")) {
-				$(this).closest(".accordion-item").remove();
+				$(this).closest(".accordion-single").remove();
 			}
 		} else {
 			alert("Nice try, but you cannot delete the only accordion item available!");
@@ -71,7 +71,7 @@ $(document).ready(function() {
 	});
 	
 	$(".btn-generate").click(function() {
-		var numItems = $(".accordion-item").length,
+		var numItems = $(".accordion-single").length,
 			accordionId = parseInt($(".accordion-id").val()),
 			startingId = parseInt($(".starting-id").val()),
 			resultCode = "",
@@ -85,10 +85,10 @@ $(document).ready(function() {
 			$(this).html($(this).val());
 		});
 		
-		for (var i = 0; i < $(".accordion-item").length; i++) {
+		for (var i = 0; i < $(".accordion-single").length; i++) {
 			var panelId = (i + startingId),
 				title = $(".accordion-item-wrapper .accordion-item:eq(" + i + ")").find("input").val(),
-				description = $(".accordion-item-wrapper .accordion-item:eq(" + i + ")").find("textarea").val();
+				description = $(".accordion-item-wrapper .accordion-single:eq(" + i + ")").find("textarea").val();
 
 			itemsArray.push({
 				panelId: panelId,

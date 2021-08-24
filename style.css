@@ -6,7 +6,7 @@ body {
 	top: 0;
 	right: 0;
 }
-.accordion-item {
+.accordion-single {
 	border-bottom: 2px dashed #ccc;
 	padding-bottom: 10px;
 	margin-bottom: 20px;
