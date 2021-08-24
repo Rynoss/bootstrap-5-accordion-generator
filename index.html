@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>RYNO Bootstrap 5 Accordion Generator</title>
+	
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+	<div class="container" id="accordion-generator">
+		<div class="row">
+			<div class="col-12">
+				<h1 class="text-center mb-4">RYNO Bootstrap 5 Accordion Generator</h1>
+			</div>
+			<div class="col-6">
+				<div class="accordion-item-wrapper">
+					<div class="accordion-item">
+						<a href="#"><i class="glyphicon glyphicon-trash delete-item"></i></a>
+						<div class="form-group">
+							<label>Item 1 Title</label>
+							<input class="form-control" type="text" />
+						</div>
+						<div class="form-group">
+							<label>Item 1 Description</label>
+							<textarea class="form-control"></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<div class="form-group text-right add-new-wrapper">
+							<a class="btn-add-new" href="#"><i class="glyphicon glyphicon-plus"></i> Add New Item</a>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-6">
+						<div class="form-group">
+							<label>Accordion Wrapper ID <span class="d-block" style="font-size: 11px;">(must be a number)</span></label>
+							<input class="form-control accordion-id" type="number" min="1" max="10" value="1" />
+						</div>
+					</div>
+					<div class="col-6">
+						<div class="form-group">
+							<label>First Item ID <span class="d-block" style="font-size: 11px;">(must be a number)</span></label>
+							<input class="form-control starting-id" type="number" min="1" max="10" value="1" />
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="form-group">
+							<button class="btn btn-primary btn-block btn-generate">Generate Code</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="accordion-result">
+					<div class="form-group">
+						<label>Result</label>
+						<textarea rows="15" class="form-control"></textarea>
+					</div>
+				</div>
+				<div class="accordion-preview-wrapper">
+					<label>Preview</label>
+					<div class="accordion-preview">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<script src="app.js"></script>
+</body>
+</html>
