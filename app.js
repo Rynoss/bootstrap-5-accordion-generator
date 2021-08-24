@@ -87,7 +87,7 @@ $(document).ready(function() {
 		
 		for (var i = 0; i < $(".accordion-single").length; i++) {
 			var panelId = (i + startingId),
-				title = $(".accordion-item-wrapper .accordion-item:eq(" + i + ")").find("input").val(),
+				title = $(".accordion-item-wrapper .accordion-single:eq(" + i + ")").find("input").val(),
 				description = $(".accordion-item-wrapper .accordion-single:eq(" + i + ")").find("textarea").val();
 
 			itemsArray.push({
