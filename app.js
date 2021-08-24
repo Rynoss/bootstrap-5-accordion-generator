@@ -35,13 +35,11 @@ $(document).ready(function() {
 	
 	function createNewPanel(accordionId,panelId,title,description) {
 		var newPanel = '\n\t<div class="accordion-item">\n\t\t'+
-			'<div class="accordion-header" id="heading-' + panelId + '">\n\t\t\t'+
-				'<h2 class="mb-0">\n\t\t\t\t'+
-					'<button class="accordion-button collapsed"  type="button" data-bs-toggle="collapse" data-bs-target="#accordion-' + accordionId + '" aria-expanded="true" aria-controls="collapse' + panelId + '">\n\t\t\t\t\t' + 
-						title + 
-					'</button>\n\t\t\t' + 
-				'</h2>\n\t\t' + 
-			'</div>\n\t\t' + 
+			'<h2 class="accordion-header" id="heading-' + panelId + '">\n\t\t\t'+
+				'<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-' + panelId + '" aria-expanded="true" aria-controls="collapse' + panelId + '">\n\t\t\t\t\t' + 
+					title + 
+				'</button>\n\t\t\t' + 
+			'</h2>\n\t\t' + 
 			'<div id="collapse-' + panelId + '" class="accordion-collapse collapse" aria-labelledby="heading-' + panelId + '" data-bs-parent="#accordion-' + accordionId + '">\n\t\t\t' + 
 				'<div class="accordion-body">\n\t\t\t\t' + 
 					description + '\n\t\t\t' + 
